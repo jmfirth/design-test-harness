@@ -21,15 +21,13 @@ function createTestHarness(config: Config): void {
 
   let clickTimer: number | null = null
   document.body.addEventListener('mousedown', (event: Event) => {
-    console.log('clicked')
-    if (clickTimer == null) {
+    if (clickTimer === null) {
       clickTimer = window.setTimeout(() => {
         clickTimer = null
       }, 500)
     } else {
       window.clearTimeout(clickTimer)
       clickTimer = null
-      console.log('dispatching...')
       store.dispatch(harnessActions.toggleVisibility())
     }
   })
