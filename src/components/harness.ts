@@ -14,7 +14,7 @@ export const harness = connect(
   dispatch => ({ actions: bindActionCreators(harnessActions, dispatch) })
 )(({ config, visible, actions }) => {
   return html`
-    <div className=${['harness', visible ? 'harness--hidden' : undefined]
+    <div className=${['harness', !visible ? 'harness--hidden' : undefined]
       .filter(Boolean)
       .join(' ')}>
       <style type="text/css">
