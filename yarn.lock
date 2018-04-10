@@ -16,9 +16,9 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@jmfirth/lit-html-redux@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@jmfirth/lit-html-redux/-/lit-html-redux-0.0.1.tgz#3e2233e861b452938894e4e7ccf82e5b020ce109"
+"@jmfirth/lit-html-redux@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@jmfirth/lit-html-redux/-/lit-html-redux-0.0.4.tgz#3caf8e471c8659bff68b4b0bee6c49ab358d9dad"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

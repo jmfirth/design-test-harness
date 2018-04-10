@@ -1,5 +1,5 @@
 import { render } from 'lit-html'
-import { Provider } from '@jmfirth/lit-html-redux'
+import { createPublisher } from '@jmfirth/lit-html-redux'
 import { harness } from './components/harness'
 import { Config } from './config'
 import { createStore, harnessActions, settingsActions } from './store'
@@ -16,8 +16,11 @@ function createContainer(): HTMLDivElement {
 function createTestHarness(config: Config): void {
   const container = createContainer()
   store.dispatch(settingsActions.setConfig(config))
-  const provider = new Provider(store, provider => render(provider.render(harness), container))
-  provider.update()
+  const provider = createPublisher(
+    publisher => render(publisher.publish(harness), container),
+    store
+  )
+  provider.mount()
 
   let clickTimer: number | null = null
   document.body.addEventListener('mousedown', (event: Event) => {

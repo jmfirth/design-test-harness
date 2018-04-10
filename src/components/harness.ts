@@ -1,4 +1,4 @@
-import { connect, ConnectedTemplateFactory, Provider } from '@jmfirth/lit-html-redux'
+import { createSubscriber } from '@jmfirth/lit-html-redux'
 import { TemplateResult, directive } from 'lit-html'
 import { html } from 'lit-html/lib/lit-extended'
 import { bindActionCreators } from 'redux'
@@ -6,7 +6,7 @@ import { grid, horizontalRuler, information } from '.'
 import { Config, Grid } from '../config'
 import { harnessActions, State } from '../store'
 
-export const harness = connect(
+export const harness = createSubscriber(
   (state: State) => ({
     config: state.settings.config,
     visible: state.harness.visible
