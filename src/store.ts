@@ -96,5 +96,9 @@ declare global {
 }
 
 export function createStore() {
-  return redux.createStore<State>(rootReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__!())
+  return redux.createStore<State>(
+    rootReducer,
+    initialState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : undefined
+  )
 }
