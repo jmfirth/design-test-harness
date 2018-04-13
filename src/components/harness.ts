@@ -25,6 +25,7 @@ export const harness = createSubscriber(
           left: 0;
           right: 0;
           pointer-events: none;
+          z-index: 99999999;
         }
         .harness--hidden {
           display: none;
